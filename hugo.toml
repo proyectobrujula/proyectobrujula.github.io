@@ -1,0 +1,15 @@
+baseURL = 'https://example.org/'
+locale = 'es-co'
+defaultContentLanguage = 'es'
+title = 'Proyecto Brújula'
+theme = 'ananke'
+
+[params]
+description = 'Startup educativa que acompaña a estudiantes desde primaria hasta la universidad con mentorías STEAM, apoyo académico y proyección profesional.'
+site_logo = '/logo-brujula-transparente.png'
+
+[params.ananke]
+custom_css = ['proyecto-brujula.css']
+
+[params.ananke.home]
+content_alignment = 'left'
