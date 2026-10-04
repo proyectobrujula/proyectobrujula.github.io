@@ -1,0 +1,11 @@
+<section class="container section {{ .Get "class" }}"{{ with .Get "id" }} id="{{ . }}"{{ end }}>
+  {{ if or (.Get "eyebrow") (.Get "title") }}
+    <div class="section-heading">
+      {{ with .Get "eyebrow" }}<p class="eyebrow dark">{{ . }}</p>{{ end }}
+      {{ with .Get "title" }}<h3>{{ . }}</h3>{{ end }}
+    </div>
+  {{ end }}
+  <div class="section-content {{ .Get "contentClass" }}">
+    {{ .Inner | .Page.RenderString }}
+  </div>
+</section>

@@ -4,7 +4,6 @@
       <img src="{{ "/logo-brujula-transparente.png" | relURL }}" class="brand-header-logo" alt="{{ .Site.Title }}" />
     </a>
     <div class="flex-l items-center">
-      {{ partials.Include "i18nlist.html" . }}
       {{ if .Site.Menus.main }}
         <ul class="{{ compare.Conditional (compare.Eq $.Site.Language.Direction "rtl") "pr0 ml3" "pl0 mr3" }}">
           {{ range .Site.Menus.main }}

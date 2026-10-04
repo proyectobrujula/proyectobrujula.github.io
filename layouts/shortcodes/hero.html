@@ -1,0 +1,40 @@
+<section class="container hero-wrap">
+  <div class="hero-copy">
+    <p class="eyebrow">{{ .Get "eyebrow" }}</p>
+    <h2>{{ .Get "title" }}</h2>
+    <p class="lead">{{ .Get "lead" }}</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#{{ .Get "programsID" }}">{{ .Get "primary" }}</a>
+      <a class="btn btn-secondary" href="#{{ .Get "contactID" }}">{{ .Get "secondary" }}</a>
+    </div>
+    <div class="hero-highlights">
+      {{ .Inner | .Page.RenderString }}
+    </div>
+  </div>
+
+  <div class="hero-panel">
+    <div class="panel-badge">{{ .Get "badge" }}</div>
+    <div class="stat-grid">
+      <div class="stat-box">
+        <strong>{{ .Get "stat1Value" }}</strong>
+        <span>{{ .Get "stat1Label" }}</span>
+      </div>
+      <div class="stat-box accent">
+        <strong>{{ .Get "stat2Value" }}</strong>
+        <span>{{ .Get "stat2Label" }}</span>
+      </div>
+      <div class="stat-box">
+        <strong>{{ .Get "stat3Value" }}</strong>
+        <span>{{ .Get "stat3Label" }}</span>
+      </div>
+      <div class="stat-box accent">
+        <strong>{{ .Get "stat4Value" }}</strong>
+        <span>{{ .Get "stat4Label" }}</span>
+      </div>
+    </div>
+    <div class="panel-note">
+      <span class="dot"></span>
+      {{ .Get "note" }}
+    </div>
+  </div>
+</section>

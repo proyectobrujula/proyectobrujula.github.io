@@ -1,8 +1,18 @@
 baseURL = 'https://example.org/'
-locale = 'es-co'
 defaultContentLanguage = 'es'
+defaultContentLanguageInSubdir = false
 title = 'Proyecto Brújula'
 theme = 'ananke'
+
+[languages.es]
+label = 'Español'
+locale = 'es-co'
+weight = 1
+
+[languages.en]
+label = 'English'
+locale = 'en-us'
+weight = 2
 
 [params]
 description = 'Startup educativa que acompaña a estudiantes desde primaria hasta la universidad con mentorías STEAM, apoyo académico y proyección profesional.'
@@ -13,3 +23,7 @@ custom_css = ['proyecto-brujula.css']
 
 [params.ananke.home]
 content_alignment = 'left'
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'

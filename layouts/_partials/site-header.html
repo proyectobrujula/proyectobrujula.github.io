@@ -1,3 +1,35 @@
 <header>
+  <div class="language-bar">
+    <nav class="language-bar-inner" aria-label="Language">
+      {{ $page := . }}
+      {{ $languages := slice
+        (dict "Lang" "es" "Label" "Español")
+        (dict "Lang" "en" "Label" "English")
+      }}
+      {{ range $languages }}
+        {{ $language := . }}
+        {{ $target := "" }}
+        {{ if eq $page.Language.Lang $language.Lang }}
+          {{ $target = $page.RelPermalink }}
+        {{ else }}
+          {{ range $page.Translations }}
+            {{ if eq .Language.Lang $language.Lang }}
+              {{ $target = .RelPermalink }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+        {{ if not $target }}
+          {{ range site.Home.Translations }}
+            {{ if eq .Language.Lang $language.Lang }}
+              {{ $target = .RelPermalink }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+        <a href="{{ $target | default site.Home.RelPermalink }}" lang="{{ $language.Lang }}" hreflang="{{ $language.Lang }}" title="{{ $language.Label }}"{{ if eq $page.Language.Lang $language.Lang }} aria-current="page"{{ end }}>
+          {{ upper $language.Lang }}
+        </a>
+      {{ end }}
+    </nav>
+  </div>
   {{ partials.Include "site-navigation.html" . }}
 </header>
